@@ -30,6 +30,43 @@
     .item__content {
       display: flex;
       align-items: center;
+
+      .item__body {
+        display: flex;
+        align-items: flex-start;
+        color: #000;
+
+        .item__image {
+          display: block;
+          margin: 0 20px;
+          max-width: 75px;
+        }
+
+        .item__title {
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .item__price {
+          font-size: 14px;
+          margin-top: 10px;
+        }
+      }
+
+      .item__delete {
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+
+        svg {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+    .item__buttons {
+      text-align: right;
     }
   }
 }
