@@ -4,12 +4,17 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from './App';
 
+import { WishlistProvider } from "./context/WishlistContext";
+
+
 
 import "./index.css"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <App />
+    <WishlistProvider>
+      <App />
+    </WishlistProvider>
   </BrowserRouter>
 );

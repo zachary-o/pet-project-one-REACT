@@ -29,9 +29,11 @@
       height: 40px;
       border-radius: 50%;
       background-color: #fff;
+      color: #000;
 
       &:hover {
         background-color: #000;
+        color: white;
       }
 
       svg {

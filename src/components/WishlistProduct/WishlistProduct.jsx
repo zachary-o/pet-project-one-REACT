@@ -1,14 +1,23 @@
-import React from 'react'
+import React from "react";
 
-import "./WishlistProduct.scss"
+import { useContext } from "react";
+import { WishlistContext } from "../../context/WishlistContext";
 
-import image from "../../assets/images/product-07.jpg";
+import "./WishlistProduct.scss";
 
-const WishlistProduct = ({title, price}) => {
+const WishlistProduct = ({ product }) => {
+  const { id, name, price, imageUrl } = product;
+
+  const { removeFromWishlist } = useContext(WishlistContext);
+
+  const handleRemoveFromWishList = () => {
+    removeFromWishlist(id);
+  };
+
   return (
     <div className="item">
       <div className="item__content">
-        <button className="item__delete">
+        <button className="item__delete" onClick={handleRemoveFromWishList}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -26,10 +35,14 @@ const WishlistProduct = ({title, price}) => {
         </button>
 
         <div className="item__body">
-          <img src={image} alt="Flowers cotton dress" className="item__image" />
+          <img
+            src={product.product01}
+            alt="Flowers cotton dress"
+            className="item__image"
+          />
 
           <div className="media-body mw-210">
-            <p className="item__title">{title}</p>
+            <p className="item__title">{name}</p>
             <p className="item__price">${price}</p>
           </div>
         </div>
@@ -39,6 +52,6 @@ const WishlistProduct = ({title, price}) => {
       </div>
     </div>
   );
-}
+};
 
-export default WishlistProduct
+export default WishlistProduct;

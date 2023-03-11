@@ -1,17 +1,28 @@
-import "./Product.scss"
+import { useContext } from "react";
+import { WishlistContext } from "../../context/WishlistContext";
 
-import product01 from "../../assets/images/product-01.jpg"
+import "./Product.scss";
 
-const Product = ({title, price}) => {
+import productImg from "../../assets/images/product-01.jpg";
+
+const Product = ({ product }) => {
+  const { name, price } = product;
+
+  const { addToWishlist } = useContext(WishlistContext);
+
+  const handleAddToWishlist = () => {
+    addToWishlist(product);
+  };
+
   return (
     <>
       <div className="product">
         <div className="products__image">
           <a href="/" className="products__image-block">
-            <img src={product01} alt="Product 01" />
+            <img src={productImg} alt="Product 01" />
           </a>
 
-          <a href="/" className="add-to-wishlist">
+          <a className="add-to-wishlist" onClick={handleAddToWishlist}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -29,14 +40,12 @@ const Product = ({title, price}) => {
           </a>
         </div>
         <div className="product__body">
-          <h3>
-            {title}
-          </h3>
+          <h3>{name}</h3>
           <p>${price}</p>
         </div>
       </div>
     </>
   );
-}
+};
 
-export default Product
+export default Product;
