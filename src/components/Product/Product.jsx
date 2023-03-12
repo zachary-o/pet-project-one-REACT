@@ -1,17 +1,15 @@
-import { useContext } from "react";
-import { WishlistContext } from "../../context/WishlistContext";
+import { addToWishlist } from "../../store/addToWishlistSlice";
+import { useDispatch } from "react-redux";
 
 import "./Product.scss";
 
-import productImg from "../../assets/images/product-01.jpg";
-
 const Product = ({ product }) => {
-  const { name, price } = product;
+  const { name, price, imageUrl } = product;
 
-  const { addToWishlist } = useContext(WishlistContext);
+  const dispatch = useDispatch();
 
   const handleAddToWishlist = () => {
-    addToWishlist(product);
+    dispatch(addToWishlist(product));
   };
 
   return (
@@ -19,7 +17,7 @@ const Product = ({ product }) => {
       <div className="product">
         <div className="products__image">
           <a href="/" className="products__image-block">
-            <img src={productImg} alt="Product 01" />
+            <img src={imageUrl} alt="Product 01" />
           </a>
 
           <a className="add-to-wishlist" onClick={handleAddToWishlist}>

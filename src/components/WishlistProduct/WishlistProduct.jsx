@@ -1,17 +1,16 @@
-import React from "react";
-
-import { useContext } from "react";
-import { WishlistContext } from "../../context/WishlistContext";
+import { removeFromWishlist } from "../../store/addToWishlistSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./WishlistProduct.scss";
 
 const WishlistProduct = ({ product }) => {
   const { id, name, price, imageUrl } = product;
 
-  const { removeFromWishlist } = useContext(WishlistContext);
+  const dispatch = useDispatch();
+  
 
   const handleRemoveFromWishList = () => {
-    removeFromWishlist(id);
+    dispatch(removeFromWishlist(id));
   };
 
   return (
@@ -36,7 +35,7 @@ const WishlistProduct = ({ product }) => {
 
         <div className="item__body">
           <img
-            src={product.product01}
+            src={imageUrl}
             alt="Flowers cotton dress"
             className="item__image"
           />

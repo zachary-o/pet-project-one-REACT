@@ -1,23 +1,23 @@
-import { useContext } from "react";
-import { WishlistContext } from "../../context/WishlistContext";
+import { useSelector } from "react-redux";
 
+import Header from "../../components/Header/Header";
 import WishlistProduct from "../../components/WishlistProduct/WishlistProduct";
 
 import "./Wishlist.scss";
-;
-
 const Wishlist = () => {
-
-  const { state } = useContext(WishlistContext);
+  const { wishlistProducts } = useSelector((store) => store.addToWishlist);
 
   return (
-    <div className="container">
-      <h2 className="wishlist__title">Wishlist</h2>
-      {state?.wishlistProducts &&
-        state?.wishlistProducts.map((product) => (
-          <WishlistProduct product={product} key={product.id} />
-        ))}
-      <div className="list"></div>
+    <div>
+      <Header />
+      <div className="container">
+        <h2 className="wishlist__title">Wishlist</h2>
+        {wishlistProducts &&
+          wishlistProducts.map((product) => (
+            <WishlistProduct product={product} key={product.id} />
+          ))}
+        <div className="list"></div>
+      </div>
     </div>
   );
 };

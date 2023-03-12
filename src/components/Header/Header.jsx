@@ -50,7 +50,7 @@ const Header = () => {
                     />
                   </svg>
 
-                  <span className="number">2</span>
+                  {/* <span className="number">2</span> */}
                 </a>
               </li>
             </ul>

@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom";
 
+import { Provider } from 'react-redux';
+import store from "./store/store.js"
+
 import App from './App';
-
-import { WishlistProvider } from "./context/WishlistContext";
-
 
 
 import "./index.css"
@@ -13,8 +13,8 @@ import "./index.css"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <WishlistProvider>
+    <Provider store={store}>
       <App />
-    </WishlistProvider>
+    </Provider>
   </BrowserRouter>
 );
