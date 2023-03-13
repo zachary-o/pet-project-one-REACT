@@ -1,4 +1,4 @@
-import { removeFromWishlist } from "../../store/addToWishlistSlice";
+import { removeFromWishlist } from "../../store/wishlistSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./WishlistProduct.scss";

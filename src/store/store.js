@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import addToWishlistReducer from "./addToWishlistSlice";
+import addToWishlistReducer from "./wishlistSlice";
 
 export default configureStore({
   reducer: {

@@ -9,13 +9,12 @@ const addToWishlistSlice = createSlice({
   initialState,
   reducers: {
     addToWishlist: (state, action) => {
-      state.wishlistProducts.push(action.payload)
+      state.wishlistProducts.push(action.payload);
     },
     removeFromWishlist: (state, action) => {
       state.wishlistProducts = state.wishlistProducts.filter(
         (product) => product.id !== action.payload
       );
-      console.log('remove item')
     },
   },
 });
