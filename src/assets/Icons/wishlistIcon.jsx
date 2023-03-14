@@ -1,6 +1,6 @@
 import React from "react";
 
-const wishlistIcon = () => {
+const WishlistIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const wishlistIcon = () => {
   );
 };
 
-export default wishlistIcon;
+export default WishlistIcon;

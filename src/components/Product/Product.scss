@@ -50,6 +50,8 @@
 
   .product__body {
     padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
 
     h3 {
       font-size: 18px;

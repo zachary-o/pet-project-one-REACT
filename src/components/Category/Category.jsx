@@ -1,4 +1,4 @@
-import "./Category.scss"
+import "./Category.scss";
 
 import Button from "../Button/Button";
 
@@ -7,8 +7,6 @@ import banner2 from "../../assets/images/banner-21.jpg";
 import banner3 from "../../assets/images/banner-22.jpg";
 
 const Category = () => {
-  const btnClassName = "btn btn-dark";
-
   return (
     <section className="category">
       <div className="container">
@@ -18,7 +16,7 @@ const Category = () => {
             <img src={banner1} alt="Glasses" />
 
             <div className="category__overlay">
-              <Button className={btnClassName} text="Glasses" />
+              <Button className={`${"btn"} ${"btn-dark"}`} text="Glasses" />
             </div>
           </div>
 
@@ -26,7 +24,7 @@ const Category = () => {
             <img src={banner2} alt="Sneakers" />
 
             <div className="category__overlay">
-              <Button className={btnClassName} text="Sneakers" />
+              <Button className={`${"btn"} ${"btn-dark"}`} text="Sneakers" />
             </div>
           </div>
 
@@ -34,7 +32,7 @@ const Category = () => {
             <img src={banner3} alt="Handbags" />
 
             <div className="category__overlay">
-              <Button className={btnClassName} text="Handbags" />
+              <Button className={`${"btn"} ${"btn-dark"}`} text="Handbags" />
             </div>
           </div>
         </div>

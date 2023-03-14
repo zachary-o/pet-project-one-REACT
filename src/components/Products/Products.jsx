@@ -6,8 +6,6 @@ import Product from "../Product/Product";
 import Button from "../Button/Button";
 
 const Products = () => {
-  const btnClassName = "btn btn-outline-primary";
-
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -25,7 +23,7 @@ const Products = () => {
     <section className="products">
       <div className="container">
         <h2 className="products__title">This Week's Highlights</h2>
-        
+
         <div className="products__grid">
           {products.map((product) => (
             <Product product={product} key={product.id} />
@@ -33,7 +31,10 @@ const Products = () => {
         </div>
 
         <div className="products__bottom">
-          <Button className={btnClassName} text="Shop Now" />
+          <Button
+            className={`${"btn"} ${"btn-outline-primary"}`}
+            text="Shop Now"
+          />
         </div>
       </div>
     </section>
