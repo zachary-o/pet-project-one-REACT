@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer"
 import WishlistProduct from "../../components/WishlistProduct/WishlistProduct";
 
 import "./Wishlist.scss";
@@ -18,6 +19,7 @@ const Wishlist = () => {
           ))}
         <div className="list"></div>
       </div>
+      <Footer />
     </div>
   );
 };
