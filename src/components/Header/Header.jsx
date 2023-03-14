@@ -1,4 +1,5 @@
-import React from "react";
+import { useSelector } from "react-redux";
+
 import { Link } from "react-router-dom";
 
 import WishlistIcon from "../../assets/Icons/WishlistIcon";
@@ -9,6 +10,8 @@ import "./Header.scss";
 import logo from "../../assets/images/logo-black.png";
 
 const Header = () => {
+  const { cartProducts } = useSelector((store) => store.addToCart);
+
   return (
     <header className="header">
       <div className="container">
@@ -26,7 +29,9 @@ const Header = () => {
               <li>
                 <Link to="/cart" className="navbar__icon">
                   <CartIcon />
-                  {/* <span className="number">2</span> */}
+                  {cartProducts.length > 0 ? (
+                    <span className="number">{cartProducts.length}</span>
+                  ) : null}
                 </Link>
               </li>
             </ul>

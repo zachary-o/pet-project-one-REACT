@@ -40,8 +40,11 @@ table {
 	border-spacing: 0;
 }
 
+
+
 html {
   box-sizing: border-box;
+  
 }
 
 *,
@@ -59,6 +62,7 @@ body {
   color: #666666;
   text-align: left;
   background-color: #fff;
+
 }
 
 h2 {
